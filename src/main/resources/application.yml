@@ -1,10 +1,6 @@
-spring:
-  application:
-    name: spring-boot-monog
-logging:
-  file: app.log
-
-server:
-  port: 8080
-
-#spring.data.mongodb.uri: mongodb://idgst-mongo:27017/digest
+spring.data.mongodb.uri=mongodb://mongo:27017/prospers_llc
+server.port=8080
+spring.mail.host=smtp.example.com
+spring.mail.port=587
+spring.mail.username=your_email@example.com
+spring.mail.password=your_password
