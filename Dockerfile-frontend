@@ -1,0 +1,11 @@
+# Use Nginx as the base image to serve static files
+FROM nginx:alpine
+
+# Copy the static files (HTML, CSS, and JS) to the Nginx container
+COPY ./src/main/resources/static /usr/share/nginx/html
+
+# Expose port 80 (default port for HTTP)
+EXPOSE 80
+
+# Start the Nginx server
+CMD ["nginx", "-g", "daemon off;"]
