@@ -1,25 +1,74 @@
-package com.mt.springmongo;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+package com.prospersllc.model;
 
-@Configuration
-@EnableWebMvc
-public class WebConfig implements WebMvcConfigurer {
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-    @Override
-    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler(
-                "/webjars/**",
-                "/img/**",
-                "/css/**",
-                "/js/**")
-                .addResourceLocations(
-                        "classpath:/META-INF/resources/webjars/",
-                        "classpath:/static/img/",
-                        "classpath:/static/css/",
-                        "classpath:/static/js/");
+@Document(collection = "company_info")
+public class CompanyInfo {
+
+    @Id
+    private String id;
+    private String aboutUs;
+    private String contactUs;
+    private String technicalServices;
+    private String managedServices;
+    private String people;
+    private String consultancy;
+
+    // Getters and Setters
+    public String getId() {
+        return id;
     }
 
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getAboutUs() {
+        return aboutUs;
+    }
+
+    public void setAboutUs(String aboutUs) {
+        this.aboutUs = aboutUs;
+    }
+
+    public String getContactUs() {
+        return contactUs;
+    }
+
+    public void setContactUs(String contactUs) {
+        this.contactUs = contactUs;
+    }
+
+    public String getTechnicalServices() {
+        return technicalServices;
+    }
+
+    public void setTechnicalServices(String technicalServices) {
+        this.technicalServices = technicalServices;
+    }
+
+    public String getManagedServices() {
+        return managedServices;
+    }
+
+    public void setManagedServices(String managedServices) {
+        this.managedServices = managedServices;
+    }
+
+    public String getPeople() {
+        return people;
+    }
+
+    public void setPeople(String people) {
+        this.people = people;
+    }
+
+    public String getConsultancy() {
+        return consultancy;
+    }
+
+    public void setConsultancy(String consultancy) {
+        this.consultancy = consultancy;
+    }
 }
