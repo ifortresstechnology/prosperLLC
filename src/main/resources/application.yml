@@ -1,7 +1,7 @@
 # MongoDB connection settings
-spring.data.mongodb.uri=mongodb+srv://denifer:admin123@mongodb-demo.p1jch.mongodb.net/?retryWrites=true&w=majority&appName=mongodb-demo
+spring.data.mongodb.uri=mongodb+srv://denifer:admin123@mongodb-demo.p1jch.mongodb.net/prospers_llc?retryWrites=true&w=majority&appName=mongodb-demo
 
-# Optional: Specify the database name
+# Optional: Specify the database name (this is already part of the URI, but it's good to define explicitly as well)
 spring.data.mongodb.database=prospers_llc
 
 # Server settings
