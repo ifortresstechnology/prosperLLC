@@ -1,11 +1,7 @@
-package com.mt.springmongo;
+package com.prospersllc.repository;
 
-import org.springframework.data.repository.PagingAndSortingRepository;
+import com.prospersllc.model.CompanyInfo;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
-/**
- * Repository for saving new and retrieving existing {@link User}s from MongoDB
- *
- * @author Mithun
- */
-public interface UserRepository extends PagingAndSortingRepository<User, String> {
+public interface CompanyInfoRepository extends MongoRepository<CompanyInfo, String> {
 }
