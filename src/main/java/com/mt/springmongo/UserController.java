@@ -1,32 +1,19 @@
-package com.mt.springmongo;
+package com.prospersllc.controller;
 
+import com.prospersllc.model.CompanyInfo;
+import com.prospersllc.repository.CompanyInfoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-/**
- * Controller which handles reqest for saving {@link User}s.
- *
- * @author Mithun
- */
-@Controller
-public class UserController {
-    private final UserRepository userRepository;
+@RestController
+public class CompanyInfoController {
 
     @Autowired
-    public UserController(final UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
+    private CompanyInfoRepository companyInfoRepository;
 
-    @PostMapping(value = "/save")
-    public String save(@RequestParam("firstName") String firstName,
-                       @RequestParam("lastName") String lastName,
-                       @RequestParam("email") String email) {
-
-        User user = new User(firstName, lastName, email);
-        userRepository.save(user);
-
-        return "redirect:/";
+    @GetMapping("/companyInfo")
+    public CompanyInfo getCompanyInfo() {
+        return companyInfoRepository.findById("1").orElse(null); // Adjust as needed
     }
 }
