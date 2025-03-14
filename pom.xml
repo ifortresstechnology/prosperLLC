@@ -42,7 +42,7 @@
             <scope>runtime</scope>
         </dependency>
 
-        <!-- Lombok (optional) for reducing boilerplate code (like getters/setters) -->
+        <!-- Lombok (optional) for reducing boilerplate code like getters/setters) -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -60,11 +60,15 @@
 
     <build>
         <plugins>
+            <!-- Spring Boot Maven Plugin for packaging and running Spring Boot apps -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.7.4</version> <!-- Spring Boot version can be controlled via the parent POM -->
+                <configuration>
+                    <mainClass>com.prospers.llc.ProspersLlcApplication</mainClass> <!-- Main class for your Spring Boot application -->
+                </configuration>
             </plugin>
         </plugins>
     </build>
-
 </project>
