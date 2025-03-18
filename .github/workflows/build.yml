@@ -2,7 +2,7 @@ name: Prospers LLC CI Master
 
 on:
   push:
-    branches: 
+    branches:
       - master
 
 jobs:
@@ -33,8 +33,8 @@ jobs:
 
       # Build with Maven (Run tests here)
       - name: Build with Maven
-        run: mvn clean verify
-        
+        run: mvn clean install
+
       # Login to Docker Hub for pushing images
       - name: Login to Docker Hub
         uses: docker/login-action@v2
@@ -45,6 +45,7 @@ jobs:
       # Build Docker image with dynamic tag using Git commit SHA
       - name: Build Docker Image
         run: |
+          
           docker build -t iscanprint/prospersllc:2.2 .
 
       # Push Docker image to Docker Hub
