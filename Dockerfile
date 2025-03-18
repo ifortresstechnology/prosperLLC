@@ -12,7 +12,7 @@ ENV PROJECT_HOME /opt/app
 ENV MONGODB_URI="mongodb+srv://denifer:admin123@mongodb-demo.p1jch.mongodb.net/prospers_llc?retryWrites=true&w=majority&appName=mongodb-demo"
 
 # Copy the Spring Boot jar file into the container
-COPY target/spring-boot-mongo-1.0.jar $PROJECT_HOME/spring-boot-mongo.jar
+COPY target/prospersllc.jar $PROJECT_HOME/prospersllc.jar
 
 # Set the working directory
 WORKDIR $PROJECT_HOME
@@ -21,4 +21,4 @@ WORKDIR $PROJECT_HOME
 EXPOSE 8080
 
 # Run the Spring Boot application
-CMD ["java", "-jar", "./spring-boot-mongo.jar"]
+CMD ["java", "-jar", "./prospersllc.jar"]
